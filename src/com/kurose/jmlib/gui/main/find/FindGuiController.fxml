@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kurose.jmlib.gui.main.find.FindGuiController">
+   <children>
+      <Label fx:id="labelInput" alignment="CENTER" focusTraversable="false" layoutX="16.0" layoutY="14.0" prefHeight="17.0" prefWidth="364.0" textAlignment="CENTER" textFill="#e10e0e" />
+      <TextField fx:id="searchTA" alignment="CENTER" layoutX="33.0" layoutY="31.0" prefHeight="25.0" prefWidth="242.0" promptText="Search" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="50.0" />
+      <Button fx:id="find" layoutX="139.0" layoutY="89.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="52.0" text="  Find  " AnchorPane.rightAnchor="209.0" />
+      <Button fx:id="search" layoutX="209.0" layoutY="89.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="52.0" text="Search" AnchorPane.leftAnchor="209.0" />
+      <Separator layoutX="-7.0" layoutY="130.0" prefHeight="5.0" prefWidth="400.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="130.0" />
+      <ComboBox fx:id="resultsCB" layoutX="126.0" layoutY="159.0" prefWidth="150.0" promptText="No Results" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" />
+      <Label fx:id="label" alignment="CENTER" layoutX="125.0" layoutY="135.0" prefHeight="17.0" prefWidth="150.0" text="Results:" textAlignment="CENTER" AnchorPane.topAnchor="137.0" />
+      <Button fx:id="prevResult" focusTraversable="false" layoutX="18.0" layoutY="159.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="52.0" text="&lt;" AnchorPane.leftAnchor="15.0" />
+      <Button fx:id="nextResult" focusTraversable="false" layoutX="333.0" layoutY="159.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="52.0" text="&gt;" AnchorPane.rightAnchor="15.0" />
+       <ImageView fx:id="cover" fitHeight="150.0" fitWidth="150.0" layoutX="126.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.topAnchor="205.0" />
+      <Separator layoutX="-25.0" layoutY="191.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <TextField fx:id="title" alignment="CENTER" layoutX="75.0" layoutY="370.0" prefHeight="25.0" prefWidth="250.0" promptText="title" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="370.0" />
+      <TextField fx:id="artist" alignment="CENTER" layoutX="76.0" layoutY="406.0" prefHeight="25.0" prefWidth="250.0" promptText="artist" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="405.0" />
+      <TextField fx:id="album" alignment="CENTER" layoutX="75.0" layoutY="510.0" prefHeight="25.0" prefWidth="250.0" promptText="album" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="440.0" />
+      <TextField fx:id="author" alignment="CENTER" layoutX="75.0" layoutY="475.0" prefHeight="25.0" prefWidth="250.0" promptText="artist album" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="475.0" />
+      <TextField fx:id="trackNo" alignment="CENTER" layoutX="126.0" layoutY="509.0" prefHeight="25.0" prefWidth="139.0" promptText="track no." AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="510.0" />
+      <TextField fx:id="date" alignment="CENTER" layoutX="182.0" layoutY="510.0" prefHeight="25.0" prefWidth="139.0" promptText="date" AnchorPane.leftAnchor="182.0" AnchorPane.topAnchor="510.0" />
+      <TextField fx:id="genre" alignment="CENTER" layoutX="30.0" layoutY="549.0" prefHeight="25.0" prefWidth="139.0" promptText="genre" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="545.0" />
+      <Button fx:id="showCover" focusTraversable="false" layoutX="182.0" layoutY="545.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="139.0" text="Show Cover" textAlignment="CENTER" AnchorPane.leftAnchor="182.0" AnchorPane.topAnchor="545.0" />
+      <Button fx:id="update" layoutX="330.0" layoutY="510.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" text="Update" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="510.0" />
+      <Button fx:id="cancel" cancelButton="true" layoutX="330.0" layoutY="545.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" text="Quit" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="545.0" />
+   </children>
+</AnchorPane>
