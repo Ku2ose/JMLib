@@ -3,6 +3,7 @@ package com.kurose.jmlib.gui.main;
 
 import com.kurose.jmlib.gui.main.body.InfoTab;
 import com.kurose.jmlib.gui.main.body.LibColumn;
+import com.kurose.jmlib.gui.main.body.LibColumnsFocusHandler;
 import com.kurose.jmlib.gui.main.body.SongColumn;
 import com.kurose.jmlib.gui.main.header.Logo;
 import com.kurose.jmlib.song.MusicLib;
@@ -46,6 +47,11 @@ public class MainWindowController implements Initializable
     {
         Sorter sorter = new Sorter(new MusicLib(Refs.LIB_HOME).getLib());
         System.out.println("Library folder being read is located at: " + Refs.LIB_HOME);
+
+        new LibColumnsFocusHandler(
+                lwartist, lwalbum, lwtrack,
+                tffartist, tffalbum, tfftrack,
+                clearFilterArtistButton, clearFilterAlbumButton, clearFilterTitleButton);
 
         LibColumn artistColumn = new LibColumn(tffartist, lwartist, clearFilterArtistButton);
         LibColumn albumColumn = new LibColumn(tffalbum, lwalbum, clearFilterAlbumButton);

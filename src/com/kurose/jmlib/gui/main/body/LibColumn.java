@@ -3,10 +3,7 @@ package com.kurose.jmlib.gui.main.body;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.transformation.FilteredList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.control.*;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.util.Callback;
 
@@ -36,11 +33,8 @@ public class LibColumn
         this.filteredSourceList = null;
         
         this.filterArea.textProperty().addListener(filterAreaChangeListener());
-        this.listView.setOnKeyReleased(setOnKeyRelesed());
-    
-        this.clearButton.setOnAction(clearButtonEvent());
-        this.listView.setCellFactory(cellColorChanges());
 
+        this.listView.setCellFactory(cellColorChanges());
     }
 
     public void setUp(List<String> sourceList)
@@ -53,22 +47,7 @@ public class LibColumn
         
         setListMultipleSelection(false);
     }
-    
-    /***
-     *  Clears the text on the Textfield and gives the focus to the belonging ListView. Set the listView's selected item
-     *  to none
-     *
-     * @return OnAction EventHandler
-     */
-    private EventHandler<ActionEvent> clearButtonEvent()
-    {
-        // toDO may change this event handling to LibHandler
-        return event -> {
-            filterArea.setText("");
-            listView.requestFocus();
-            listView.getSelectionModel().setSelectionMode(null);
-        };
-    }
+
     
     private ChangeListener<? super String> filterAreaChangeListener()
     {
@@ -102,16 +81,6 @@ public class LibColumn
                         }
                     }
                 };
-            }
-        };
-    }
-
-    private EventHandler<? super KeyEvent> setOnKeyRelesed() {
-        return event -> {
-            if (event.getCode().isLetterKey()){
-                filterArea.requestFocus();
-                filterArea.setText(event.getText());
-                filterArea.positionCaret(1);
             }
         };
     }

@@ -4,10 +4,7 @@ import com.kurose.jmlib.song.Song;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.transformation.FilteredList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.control.*;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.util.Callback;
 
@@ -36,11 +33,8 @@ public class SongColumn
         this.filteredSourceList = null;
         
         this.filterArea.textProperty().addListener(filterAreaChangeListener());
-    
-        this.clearButton.setOnAction(clearButtonEvent());
 
         this.listView.setCellFactory(cellColorChanges());
-        this.listView.setOnKeyReleased(setOnKeyRelesed());
     }
     
     public void setUp(List<Song> sourceList)
@@ -52,21 +46,6 @@ public class SongColumn
         this.listView.getSelectionModel().select(null);
         
         setListMultipleSelection(false);
-    }
-    
-    /***
-     *  Clears the text on the Textfield and gives the focus to the belonging ListView. Set the listView's selected item
-     *  to none
-     *
-     * @return OnAction EventHandler
-     */
-    private EventHandler<ActionEvent> clearButtonEvent()
-    {
-        return event -> {
-            filterArea.setText("");
-            listView.requestFocus();
-            listView.getSelectionModel().setSelectionMode(null);
-        };
     }
     
     private ChangeListener<? super String> filterAreaChangeListener()
@@ -110,16 +89,6 @@ public class SongColumn
                     }
 
                 };
-            }
-        };
-    }
-
-    private EventHandler<? super KeyEvent> setOnKeyRelesed() {
-        return event -> {
-            if (event.getCode().isLetterKey()){
-                filterArea.requestFocus();
-                filterArea.setText(event.getText());
-                filterArea.positionCaret(1);
             }
         };
     }
