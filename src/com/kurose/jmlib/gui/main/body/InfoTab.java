@@ -49,7 +49,7 @@ public class InfoTab
         author.setTooltip(new Tooltip("Album artist field"));
         title.setTooltip(new Tooltip("MyTrack title field"));
         date.setTooltip(new Tooltip("Release field"));
-        track.setTooltip(new Tooltip("MyTrack number field"));
+        track.setTooltip(new Tooltip("Track number field"));
 
         this.cover.setFitWidth(150);
         this.cover.setPreserveRatio(true);

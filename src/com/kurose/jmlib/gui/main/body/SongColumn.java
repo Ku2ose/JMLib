@@ -11,28 +11,20 @@ import javafx.util.Callback;
 import java.util.List;
 
 
-/*
-    TODO:
-        - sembra brutto che non specifico i tipi in molte componenti, ma finche va
-        - add more controls to the filter textArea, but which?
- */
-
 public class SongColumn
 {
-    private TextField filterArea;
     private ListView<Song>  listView;
-    private Button clearButton;
+
 
     private FilteredList<Song> filteredSourceList;
 
-    public SongColumn(TextField filterArea, ListView<Song> listView, Button button)
+    public SongColumn(TextField filterArea, ListView<Song> listView)
     {
-        this.filterArea = filterArea;
         this.listView = listView;
-        this.clearButton = button;
+
         this.filteredSourceList = null;
         
-        this.filterArea.textProperty().addListener(filterAreaChangeListener());
+        filterArea.textProperty().addListener(filterAreaChangeListener());
 
         this.listView.setCellFactory(cellColorChanges());
     }
@@ -55,7 +47,7 @@ public class SongColumn
             filteredSourceList.setPredicate(p -> {
                 if (newValue == null || newValue.isEmpty()) {
                     return true;
-                } else return p.toString().toLowerCase().contains(newValue.toLowerCase());
+                } else return p.toString().toLowerCase().startsWith(newValue.toLowerCase());
             });
         };
     }

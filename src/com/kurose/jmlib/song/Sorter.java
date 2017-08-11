@@ -27,7 +27,7 @@ public class Sorter {
         lib.forEach(s -> {
             if (!listArtists.contains(s.getMetadata().getAuthor())) {
                 if (s.getMetadata().getAuthor() != null &&
-                        !s.getMetadata().getAuthor().equalsIgnoreCase(""))
+                        !s.getMetadata().getAuthor().equals(""))
                 {
                     listArtists.add(s.getMetadata().getAuthor());
                 } else {
@@ -53,7 +53,7 @@ public class Sorter {
             // check and add the tracks that have a autor tag
             lib.forEach(s -> {
                 if (s.getMetadata().getAuthor() == null) return;
-                if (s.getMetadata().getAuthor().equalsIgnoreCase(artist)) {
+                if (s.getMetadata().getAuthor().equals(artist)) {
                     listAlbums.add(s);
                 }
             });

@@ -53,9 +53,9 @@ public class MainWindowController implements Initializable
                 tffartist, tffalbum, tfftrack,
                 clearFilterArtistButton, clearFilterAlbumButton, clearFilterTitleButton);
 
-        LibColumn artistColumn = new LibColumn(tffartist, lwartist, clearFilterArtistButton);
-        LibColumn albumColumn = new LibColumn(tffalbum, lwalbum, clearFilterAlbumButton);
-        SongColumn titleColumn = new SongColumn(tfftrack, lwtrack, clearFilterTitleButton);
+        LibColumn artistColumn = new LibColumn(tffartist, lwartist);
+        LibColumn albumColumn = new LibColumn(tffalbum, lwalbum);
+        SongColumn titleColumn = new SongColumn(tfftrack, lwtrack);
 
         InfoTab infoTab = new InfoTab(titleTA, artistTA, albumTA, authorTA, trackTA, yearTA,
                 updateCoverTButton, coverIV, genreCB);
